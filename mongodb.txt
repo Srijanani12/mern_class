@@ -1,0 +1,319 @@
+use KEC
+switched to db KEC
+db.createCollection("User")
+{ ok: 1 }
+db.User.insertOne({
+Name:"Sri Janani",
+Email:"srijanani@gmail.com",
+Age:"19",
+Dep:"EIE"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('685a26eb985b201a1d25d23b')
+}
+db.User.insertMany([
+  {Name: "sri",
+Age: "19",
+Email: "sri@gmail.com",
+Dept: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2c12985b201a1d25d23c')
+  }
+}
+db.User.insertMany([
+  {Name: "John",
+Age: "18",
+Email: "john@gmail.com",
+Dept: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2dd3985b201a1d25d23d')
+  }
+}
+db.User.insertMany([
+  {Name: "Jananisri",
+Age: "20",
+Email: "jananisri@gmail.com",
+Dept: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e18985b201a1d25d23e')
+  }
+}
+db.User.insertMany([
+  {Name: "soni",
+Age: "21",
+Email: "soni@gmail.com",
+Dept: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e32985b201a1d25d23f')
+  }
+}
+db.User.insertMany([
+  {Name: "Srija",
+Age: "22",
+Email: "srija@gmail.com",
+Dept: "EIE"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('685a2e98985b201a1d25d240')
+  }
+}
+db.USer.find()
+db.User.find()
+{
+  _id: ObjectId('685a26eb985b201a1d25d23b'),
+  Name: 'Sri Janani',
+  Email: 'srijanani@gmail.com',
+  Age: '19',
+  Dep: 'EIE'
+}
+{
+  _id: ObjectId('685a2c12985b201a1d25d23c'),
+  Name: 'sri',
+  Age: '19',
+  Email: 'sri@gmail.com',
+  Dept: 'EIE'
+}
+{
+  _id: ObjectId('685a2dd3985b201a1d25d23d'),
+  Name: 'John',
+  Age: '18',
+  Email: 'john@gmail.com',
+  Dept: 'EIE'
+}
+{
+  _id: ObjectId('685a2e18985b201a1d25d23e'),
+  Name: 'Jananisri',
+  Age: '20',
+  Email: 'Jananisri@gmail.com',
+  Dept: 'EIE'
+}
+{
+  _id: ObjectId('685a2e32985b201a1d25d23f'),
+  Name: 'soni',
+  Age: '21',
+  Email: 'soni@gmail.com',
+  Dept: 'EIE'
+}
+{
+  _id: ObjectId('685a2e98985b201a1d25d240'),
+  Name: 'Srija',
+  Age: '22',
+  Email: 'srija@gmail.com',
+  Dept: 'EIE'
+}
+db.User.findOne()
+{
+  _id: ObjectId('685a26eb985b201a1d25d23b'),
+  Name: 'Sri Janani',
+  Email: 'srijanani@gmail.com',
+  Age: '19',
+  Dep: 'EIE'
+}
+db.User.find({Name:"sri"})
+{
+  _id: ObjectId('685a2c12985b201a1d25d23c'),
+  Name: 'sri',
+  Age: '19',
+  Email: 'sri@gmail.com',
+  Dept: 'EIE'
+}
+db.User.find({Age:18})
+db.USer.find({Age:"18"})
+db.User.find({Age: "18"})
+{
+  _id: ObjectId('685a2dd3985b201a1d25d23d'),
+  Name: 'John',
+  Age: '18',
+  Email: 'john@gmail.com',
+  Dept: 'EIE'
+}
+db.User.updateOne({Name: "Srija"},{$set:{Name: "Srijan"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.User.find({Name: "Srijan"})
+{
+  _id: ObjectId('685a2e98985b201a1d25d240'),
+  Name: 'Srijan',
+  Age: '22',
+  Email: 'srija@gmail.com',
+  Dept: 'EIE'
+}
+db.UserupdateMany({Age: "19"},{$set:{Age: "18"}})
+TypeError: db.UserupdateMany is not a function
+db.USer.({},{$set: {phone:''}})
+SyntaxError: Unexpected token (1:8)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39m[33mUSer[39m[33m.[39m({}[33m,[39m{$set[33m:[39m {phone[33m:[39m[32m''[39m}})
+ [90m   |[39m         [31m[1m^[22m[39m[0m
+db.User.updateMany({},{$set:{Phoneno: "8807835995"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 6,
+  modifiedCount: 6,
+  upsertedCount: 0
+}
+db.USer.find()
+db.User.find()
+{
+  _id: ObjectId('685a26eb985b201a1d25d23b'),
+  Name: 'Sri Janani',
+  Email: 'srijanani@gmail.com',
+  Age: '19',
+  Dep: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2c12985b201a1d25d23c'),
+  Name: 'sau',
+  Age: '19',
+  Email: 'sau@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2dd3985b201a1d25d23d'),
+  Name: 'Jithiyaa',
+  Age: '15',
+  Email: 'jithiyaa@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e18985b201a1d25d23e'),
+  Name: 'sibi',
+  Age: '19',
+  Email: 'sibi@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e32985b201a1d25d23f'),
+  Name: 'varshini',
+  Age: '19',
+  Email: 'varshini@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e98985b201a1d25d240'),
+  Name: 'varsh',
+  Age: '19',
+  Email: 'var@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+db.User.find().sort({Name: 1})
+{
+  _id: ObjectId('685a2dd3985b201a1d25d23d'),
+  Name: 'Jithiyaa',
+  Age: '15',
+  Email: 'jithiyaa@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a26eb985b201a1d25d23b'),
+  Name: 'Sri Janani',
+  Email: 'saurabhiselva@gmail.com',
+  Age: '19',
+  Dep: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2c12985b201a1d25d23c'),
+  Name: 'Sri',
+  Age: '19',
+  Email: 'sri@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e18985b201a1d25d23e'),
+  Name: 'Jananisri',
+  Age: '19',
+  Email: 'jananisri@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e98985b201a1d25d240'),
+  Name: 'Srijan',
+  Age: '19',
+  Email: 'srija@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e32985b201a1d25d23f'),
+  Name: 'Soni',
+  Age: '19',
+  Email: 'soni@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+db.User.find().sort({Name: -1})
+{
+  _id: ObjectId('685a2e32985b201a1d25d23f'),
+  Name: 'Srijan',
+  Age: '22',
+  Email: 'srija@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e98985b201a1d25d240'),
+  Name: 'Soni',
+  Age: '21',
+  Email: 'soni@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2e18985b201a1d25d23e'),
+  Name: 'Jananisri',
+  Age: '21',
+  Email: 'jananisri@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2c12985b201a1d25d23c'),
+  Name: 'sri',
+  Age: '19',
+  Email: 'sri@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a26eb985b201a1d25d23b'),
+  Name: 'Sri Janani',
+  Email: 'srijanani@gmail.com',
+  Age: '19',
+  Dep: 'EIE',
+  Phoneno: '8807835995'
+}
+{
+  _id: ObjectId('685a2dd3985b201a1d25d23d'),
+  Name: 'John',
+  Age: '18',
+  Email: 'john@gmail.com',
+  Dept: 'EIE',
+  Phoneno: '8807835995'
+}
+KEC
+Selection deleted
